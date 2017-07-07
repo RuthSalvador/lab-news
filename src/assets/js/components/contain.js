@@ -4,7 +4,7 @@
 const Contain = (update) => {
   const section = $('<section></section>');
   const main = $('<div></div>');
-  const image0 = $('<div><<img src="assets/img/' + + '" alt=""></div>');
+  const image0 = $('<div><img src="assets/img/news/' + state.containData[0].img + '" alt=""></div>');
   const image1 = $('<div></div>');
   const image2 = $('<div></div>');
   const image3 = $('<div></div>');
@@ -53,8 +53,6 @@ const Contain = (update) => {
   mundo.append(image14);
 
 
-
-  console.log(state.containData);
 
 
 

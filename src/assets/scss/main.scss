@@ -14,8 +14,28 @@
   &__marg {
    margin: 21px;
   }
+  &__flex {
+    display: flex;
+    &--around {
+      justify-content: space-around;
+    }
+    &--center-column {
+      align-items: center;
+      flex-direction: column;
+    }
+  }
 }
+
+
 
 li {
   font-size: 20px;
+}
+
+.imagen__decolorada {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
 }
