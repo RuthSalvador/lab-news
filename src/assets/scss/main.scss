@@ -1,3 +1,21 @@
-h1 {
-  color: royalblue;
+@import "colors";
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.top {
+  overflow: hidden;
+  &__border--bot {
+    border-bottom: $gray 1px solid;
+  }
+  &__padd {
+    padding: 21px;
+  }
+  &__marg {
+   margin: 21px;
+  }
+}
+
+li {
+  font-size: 20px;
 }

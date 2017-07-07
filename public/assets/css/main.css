@@ -1,3 +1,32 @@
-h1 {
-  color: royalblue;
+.back-lab {
+  background-color: #f7b617;
+  color: white;
+}
+
+.inline {
+  display: inline-block;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.top {
+  overflow: hidden;
+}
+
+.top__border--bot {
+  border-bottom: #2b2b2b 1px solid;
+}
+
+.top__padd {
+  padding: 21px;
+}
+
+.top__marg {
+  margin: 21px;
+}
+
+li {
+  font-size: 20px;
 }
