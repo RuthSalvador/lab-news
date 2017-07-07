@@ -1,7 +1,7 @@
 'use strict';
 
 const Header = (update) => {
-  const header = $('<header class="container-fluid"></header>');
+  const header = $('<header class="container"></header>');
 
   const divTop = $('<div class="top top__border--bot top__marg"></div>');
   const topSearch = $('<div class="pull-left"></div>');

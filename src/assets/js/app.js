@@ -8,9 +8,9 @@ const render = (root) => {
     render(root);
   };
 
-  wrapper.append(Header(update));
-  wrapper.append(Contain(update));
-  wrapper.append(Footer(update));
+  wrapper.append(Header());
+  wrapper.append(Contain());
+  wrapper.append(Footer());
 
   root.append(wrapper);
 
