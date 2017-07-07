@@ -40,12 +40,9 @@ const Header = (update) => {
   divLogo.append(logo);
   divLogo.append(date);
   nav.append(details);
- // update();
-  console.log(state.containData);
 
 
-
-
+  //console.log(state.containData);
 
 
   return header;

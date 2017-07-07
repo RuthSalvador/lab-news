@@ -24,7 +24,7 @@ const state = {
   categories: null
 
 };
-console.log(state.containData);
+
 
 $(_ => {
 
@@ -32,15 +32,16 @@ $(_ => {
 
     if (err) { return alert(err.message);}
     state.containData = json;
-    console.log(state.containData);
-    console.log(state.containData[0].author.name);
+  /*  console.log(state.containData);
+    console.log(state.containData[0].author.name);*/
 
     getJSON('/api/categories/', (err, json) => {
 
       if (err) { return alert(err.message);}
       state.categories= json;
-      console.log(state.categories);
-
+      //console.log(state.categories);
+      const root = $("#root");
+      render(root);
 
     });
 

@@ -2,28 +2,25 @@
 
 
 const Contain = (update) => {
-  const section = $('<section></section>');
+  const section = $('<section class="container"></section>');
   const main = $('<div></div>');
-  const image0 = $('<div><img src="assets/img/news/' + state.containData[0].img + '" alt=""></div>');
-  const image1 = $('<div></div>');
-  const image2 = $('<div></div>');
-  const image3 = $('<div></div>');
+  let imageMain ='';
+  //console.log(state.categories);
+  for(let i=0; i<=4; i++){
+    main.append(imageMain);
+    imageMain=$('<div><img class="img-responsive" src="assets/img/news/' + state.containData[i].img + '" alt=""></div>');
+  }
 
   const mundo = $('<div></div>');
-  const image4 = $('<div></div>');
-  const image5 = $('<div></div>');
-  const image6 = $('<div></div>');
-  const image7 = $('<div></div>');
-  const image8 = $('<div></div>');
-  const image9 = $('<div></div>');
-  const image10 = $('<div></div>');
-  const image11 = $('<div></div>');
-  const image12 = $('<div></div>');
-  const image13 = $('<div></div>');
+  let imageMundo = '';
+  for(let j=5; j<=14; j++){
+    mundo.append(imageMundo);
+    imageMundo=$('<div><img class="img-responsive" src="assets/img/news/' + state.containData[j].img + '" alt=""></div>');
+  }
 
   const tecno = $('<div></div>');
 
-  const image14 = $('<div></div>');
+
 
 
   const edu = $('<div></div>');
@@ -35,22 +32,6 @@ const Contain = (update) => {
   section.append(edu);
   section.append(opi);
 
-  main.append(image0);
-  main.append(image1);
-  main.append(image2);
-  main.append(image3);
-
-  mundo.append(image4);
-  mundo.append(image5);
-  mundo.append(image6);
-  mundo.append(image7);
-  mundo.append(image8);
-  mundo.append(image9);
-  mundo.append(image10);
-  mundo.append(image11);
-  mundo.append(image12);
-  mundo.append(image13);
-  mundo.append(image14);
 
 
 
