@@ -19,7 +19,7 @@ const Contain = (update) => {
     } else {
       clase = "column-sm-3";
     }
-    imageMain=$('<div class="main"><figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[i].img + '" alt="news">' +
+    imageMain=$('<div class="main"><figure class="column-xs-12 '+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[i].img + '" alt="news">' +
       '<figcation class="figcap">'+state.containData[i].title+'</figcation></figure></div>');
   }
 
@@ -35,7 +35,7 @@ const Contain = (update) => {
     } else {
       clase = "column-sm-3";
     }
-    imageMundo=$('<figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[j].img + '" alt="news">' +
+    imageMundo=$('<figure class="column-xs-12 '+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[j].img + '" alt="news">' +
       '<figcation>'+state.containData[j].title+'</figcation></figure>');
   }
 
@@ -51,7 +51,7 @@ const Contain = (update) => {
     } else {
       clase = "column-sm-3"
     }
-    imageTecno=$('<figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="news">' +
+    imageTecno=$('<figure class="column-xs-12 '+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="news">' +
       '<figcation>'+state.containData[k].title+'</figcation></figure>');
   }
 
@@ -67,7 +67,7 @@ const Contain = (update) => {
     } else {
       clase = "column-sm-3"
     }
-    imageEdu=$('<figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="news">' +
+    imageEdu=$('<figure class="column-xs-12 '+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="news">' +
       '<figcation>'+state.containData[k].title+'</figcation></figure>');
   }
 
