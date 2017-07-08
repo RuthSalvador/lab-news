@@ -11,7 +11,7 @@ const Header = (update) => {
 
   const header = $('<header class="container"></header>');
 
-  const divTop = $('<div class="top top__border--bot top__marg visible-sm visible-md visible-lg"></div>');
+  const divTop = $('<div class="top top__border--bot top__marg visible-md visible-lg"></div>');
   const topSearch = $('<div class="pull-left"></div>');
   const menu = $('<div class="inline"><img class="inline" src="assets/img/menu.png" alt="menu"><p class="text-uppercase inline">sections</p></div>');
   const search = $('<div class="inline"><img class="inline" src="assets/img/search.png" alt="search"><p class="text-uppercase inline">search</p></div>');
@@ -22,9 +22,9 @@ const Header = (update) => {
 
   const divLogo = $('<div class="text-center"></div>');
   const logo = $('<img class="img-responsive center-block" src="assets/img/logoicon.png" alt="logo">');
-  const date = $('<div class="top__padd visible-sm visible-md visible-lg">'+today+' | <img src="assets/img/cloud.png" alt="weather"> 22°</div>');
+  const date = $('<div class="top__padd visible-md visible-lg">'+today+' | <img src="assets/img/cloud.png" alt="weather"> 22°</div>');
 
-  const nav = $('<ul class="list-inline back-lab top__padd text-center top__flex top__flex--around visible-sm visible-md visible-lg"></ul>');
+  const nav = $('<ul class="list-inline back-lab top__padd text-center top__flex top__flex--around hidden-xs hidden-sm"></ul>');
   const details = $('<li class="">Lo último</li><li>Opinión</li><li>Cultura</li><li>Tecnología</li><li>Mundo</li><li>Economía</li><li>Lifestyle</li><li>Deporte</li>');
 
   header.append(divTop);

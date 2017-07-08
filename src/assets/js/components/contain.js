@@ -3,7 +3,7 @@
 
 const Contain = (update) => {
   const section = $('<section class="container"></section>');
-  const main = $('<div class="bloques main column-xs-12"></div>');
+  const main = $('<div class="bloques column-xs-12"></div>');
   const imagenMainPrincipal = $('<figure class="main-principal">' +
     '<img class="img-responsive" src="assets/img/news/' + state.containData[0].img + '" alt="news principal">' +
     '<figcation class="figcap-principal column-sm-9 top__padd"><h1>'+state.containData[0].title+'</h1><p>'+state.containData[0].brief+'</p></figcation></figure>');
@@ -19,12 +19,12 @@ const Contain = (update) => {
     } else {
       clase = "column-sm-3";
     }
-    imageMain=$('<figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[i].img + '" alt="news">' +
-      '<figcation class="figcap">'+state.containData[i].title+'</figcation></figure>');
+    imageMain=$('<div class="main"><figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[i].img + '" alt="news">' +
+      '<figcation class="figcap">'+state.containData[i].title+'</figcation></figure></div>');
   }
 
   const mundo = $('<div class="bloques column-xs-12"></div>');
-  const titMundo = $('<h2 class="text-uppercase">'+state.categories[1].title+'</h2><hr>');
+  const titMundo = $('<h2 class="text-uppercase">'+state.categories[1].title+'</h2><hr class="hr-lab">');
   mundo.append(titMundo);
   let imageMundo = '';
   for(let j=4; j<=14; j++){
@@ -40,7 +40,7 @@ const Contain = (update) => {
   }
 
   const tecno = $('<div class="bloques column-xs-12"></div>');
-  const titTecno = $('<h2 class="text-uppercase">'+state.categories[2].title+'</h2><hr>');
+  const titTecno = $('<h2 class="text-uppercase">'+state.categories[2].title+'</h2><hr class="hr-lab">');
   tecno.append(titTecno);
   let imageTecno = '';
   for(let k=14; k<=19; k++){
@@ -56,7 +56,7 @@ const Contain = (update) => {
   }
 
   const edu = $('<div class="bloques column-xs-12"></div>');
-  const titEdu = $('<h2 class="text-uppercase">'+state.categories[3].title+'</h2><hr>');
+  const titEdu = $('<h2 class="text-uppercase">'+state.categories[3].title+'</h2><hr class="hr-lab">');
   edu.append(titEdu);
   let imageEdu = '';
   for(let k=19; k<=24; k++){
@@ -72,7 +72,7 @@ const Contain = (update) => {
   }
 
   const opi = $('<div class="bloques column-xs-12"></div>');
-  const titOpi = $('<h2 class="text-uppercase">'+state.categories[4].title+'</h2><hr>');
+  const titOpi = $('<h2 class="text-uppercase">'+state.categories[4].title+'</h2><hr class="hr-lab">');
   opi.append(titOpi);
   let imageOpi = '';
   for(let k=24; k<=28; k++){

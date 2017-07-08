@@ -23,7 +23,7 @@ p {
    margin: 21px;
   }
   &__flex {
-    display: flex !important;
+    display: flex;
     &--around {
       justify-content: space-between;
     }
@@ -61,8 +61,20 @@ li {
   }
 }
 
-.figcap {
-  height: 200px;
-  background-color: $gray-light;
+figure {
+  background-color: $gray;
   color: $white;
+  /*margin: 7px;*/
+}
+
+.main {
+  padding: 7px;
+}
+
+.hr-lab {
+  width: 100px;
+  height: 10px;
+  background-color: $color-lab;
+  float: left;
+  display: block;
 }

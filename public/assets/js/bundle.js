@@ -63,10 +63,29 @@ $(_ => {
 });
 'use strict';
 
+const getJSON = (url, cb) => {
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.addEventListener('load', () => {
+
+    if (xhr.status !== 200) {
+      return cb(new Error('Error loading JSON from ' + url + '(' + xhr.status + ')'));
+    }
+
+    cb(null, xhr.response);
+  });
+
+  xhr.open('GET', url);
+  xhr.responseType = 'json';
+  xhr.send();
+};
+'use strict';
+
 
 const Contain = (update) => {
   const section = $('<section class="container"></section>');
-  const main = $('<div class="bloques main column-xs-12"></div>');
+  const main = $('<div class="bloques column-xs-12"></div>');
   const imagenMainPrincipal = $('<figure class="main-principal">' +
     '<img class="img-responsive" src="assets/img/news/' + state.containData[0].img + '" alt="news principal">' +
     '<figcation class="figcap-principal column-sm-9 top__padd"><h1>'+state.containData[0].title+'</h1><p>'+state.containData[0].brief+'</p></figcation></figure>');
@@ -82,12 +101,12 @@ const Contain = (update) => {
     } else {
       clase = "column-sm-3";
     }
-    imageMain=$('<figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[i].img + '" alt="news">' +
-      '<figcation class="figcap">'+state.containData[i].title+'</figcation></figure>');
+    imageMain=$('<div class="main"><figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[i].img + '" alt="news">' +
+      '<figcation class="figcap">'+state.containData[i].title+'</figcation></figure></div>');
   }
 
   const mundo = $('<div class="bloques column-xs-12"></div>');
-  const titMundo = $('<h2 class="text-uppercase">'+state.categories[1].title+'</h2><hr>');
+  const titMundo = $('<h2 class="text-uppercase">'+state.categories[1].title+'</h2><hr class="hr-lab">');
   mundo.append(titMundo);
   let imageMundo = '';
   for(let j=4; j<=14; j++){
@@ -103,7 +122,7 @@ const Contain = (update) => {
   }
 
   const tecno = $('<div class="bloques column-xs-12"></div>');
-  const titTecno = $('<h2 class="text-uppercase">'+state.categories[2].title+'</h2><hr>');
+  const titTecno = $('<h2 class="text-uppercase">'+state.categories[2].title+'</h2><hr class="hr-lab">');
   tecno.append(titTecno);
   let imageTecno = '';
   for(let k=14; k<=19; k++){
@@ -119,7 +138,7 @@ const Contain = (update) => {
   }
 
   const edu = $('<div class="bloques column-xs-12"></div>');
-  const titEdu = $('<h2 class="text-uppercase">'+state.categories[3].title+'</h2><hr>');
+  const titEdu = $('<h2 class="text-uppercase">'+state.categories[3].title+'</h2><hr class="hr-lab">');
   edu.append(titEdu);
   let imageEdu = '';
   for(let k=19; k<=24; k++){
@@ -135,7 +154,7 @@ const Contain = (update) => {
   }
 
   const opi = $('<div class="bloques column-xs-12"></div>');
-  const titOpi = $('<h2 class="text-uppercase">'+state.categories[4].title+'</h2><hr>');
+  const titOpi = $('<h2 class="text-uppercase">'+state.categories[4].title+'</h2><hr class="hr-lab">');
   opi.append(titOpi);
   let imageOpi = '';
   for(let k=24; k<=28; k++){
@@ -212,7 +231,7 @@ const Header = (update) => {
 
   const header = $('<header class="container"></header>');
 
-  const divTop = $('<div class="top top__border--bot top__marg visible-sm visible-md visible-lg"></div>');
+  const divTop = $('<div class="top top__border--bot top__marg visible-md visible-lg"></div>');
   const topSearch = $('<div class="pull-left"></div>');
   const menu = $('<div class="inline"><img class="inline" src="assets/img/menu.png" alt="menu"><p class="text-uppercase inline">sections</p></div>');
   const search = $('<div class="inline"><img class="inline" src="assets/img/search.png" alt="search"><p class="text-uppercase inline">search</p></div>');
@@ -223,9 +242,9 @@ const Header = (update) => {
 
   const divLogo = $('<div class="text-center"></div>');
   const logo = $('<img class="img-responsive center-block" src="assets/img/logoicon.png" alt="logo">');
-  const date = $('<div class="top__padd visible-sm visible-md visible-lg">'+today+' | <img src="assets/img/cloud.png" alt="weather"> 22°</div>');
+  const date = $('<div class="top__padd visible-md visible-lg">'+today+' | <img src="assets/img/cloud.png" alt="weather"> 22°</div>');
 
-  const nav = $('<ul class="list-inline back-lab top__padd text-center top__flex top__flex--around visible-sm visible-md visible-lg"></ul>');
+  const nav = $('<ul class="list-inline back-lab top__padd text-center top__flex top__flex--around hidden-xs hidden-sm"></ul>');
   const details = $('<li class="">Lo último</li><li>Opinión</li><li>Cultura</li><li>Tecnología</li><li>Mundo</li><li>Economía</li><li>Lifestyle</li><li>Deporte</li>');
 
   header.append(divTop);
@@ -252,23 +271,4 @@ const Header = (update) => {
 
 
 
-};
-'use strict';
-
-const getJSON = (url, cb) => {
-
-  const xhr = new XMLHttpRequest();
-
-  xhr.addEventListener('load', () => {
-
-    if (xhr.status !== 200) {
-      return cb(new Error('Error loading JSON from ' + url + '(' + xhr.status + ')'));
-    }
-
-    cb(null, xhr.response);
-  });
-
-  xhr.open('GET', url);
-  xhr.responseType = 'json';
-  xhr.send();
 };

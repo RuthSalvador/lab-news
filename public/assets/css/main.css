@@ -238,7 +238,7 @@ p {
 }
 
 .top__flex {
-  display: flex !important;
+  display: flex;
 }
 
 .top__flex--around {
@@ -276,8 +276,20 @@ li {
   color: white;
 }
 
-.figcap {
-  height: 200px;
-  background-color: #5f6368;
+figure {
+  background-color: #2b2b2b;
   color: white;
+  /*margin: 7px;*/
+}
+
+.main {
+  padding: 7px;
+}
+
+.hr-lab {
+  width: 100px;
+  height: 10px;
+  background-color: #f7b617;
+  float: left;
+  display: block;
 }
