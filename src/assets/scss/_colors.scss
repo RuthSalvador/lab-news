@@ -1,10 +1,11 @@
 $color-lab: rgb(247, 182, 23);
 $gray: rgb(43, 43, 43);
 $gray-light: rgb(95, 99, 104);
+$white: rgb(255, 255, 255);
 
 .back-lab {
   background-color: $color-lab;
-  color: rgb(255, 255, 255);
+  color: $white;
 }
 
 

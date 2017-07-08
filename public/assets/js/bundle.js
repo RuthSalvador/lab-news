@@ -35,7 +35,7 @@ $(_ => {
   /*  console.log(state.containData);
     console.log(state.containData[0].author.name);*/
 
-    getJSON('/api/categories/', (err, json) => {
+    /*getJSON('/api/categories/', (err, json) => {
 
       if (err) { return alert(err.message);}
       state.categories= json;
@@ -43,21 +43,22 @@ $(_ => {
       const root = $("#root");
       render(root);
 
-    });
+    });*/
 
     const root = $("#root");
     render(root);
 
   });
 
- /* getJSON('/api/categories/', (err, json) => {
+  getJSON('/api/categories/', (err, json) => {
 
     if (err) { return alert(err.message);}
     state.categories= json;
-    console.log(state.categories);
+    //console.log(state.categories);
+  const root = $("#root");
+  render(root);
 
-
-  });*/
+  });
 
 });
 'use strict';
@@ -65,65 +66,89 @@ $(_ => {
 
 const Contain = (update) => {
   const section = $('<section class="container"></section>');
-  const main = $('<div></div>');
-  const imagenMainPrincipal = $('<figure>' +
-    '<img class="img-responsive" src="assets/img/news/' + state.containData[0].img + '" alt="">' +
-    '<figcation><p>'+state.containData[0].title+'</p><p>'+state.containData[0].brief+'</p></figcation></figure>');
+  const main = $('<div class="bloques main column-xs-12"></div>');
+  const imagenMainPrincipal = $('<figure class="main-principal">' +
+    '<img class="img-responsive" src="assets/img/news/' + state.containData[0].img + '" alt="news principal">' +
+    '<figcation class="figcap-principal column-sm-9 top__padd"><h1>'+state.containData[0].title+'</h1><p>'+state.containData[0].brief+'</p></figcation></figure>');
   main.append(imagenMainPrincipal);
 
   let imageMain ='';
   //console.log(state.categories);
   for(let i=1; i<=4; i++){
     main.append(imageMain);
-    imageMain=$('<figure><img class="img-responsive" src="assets/img/news/' + state.containData[i].img + '" alt="">' +
-      '<figcation>'+state.containData[i].title+'</figcation></figure>');
+    let clase ='';
+    if (i==1){
+      clase = "column-sm-6";
+    } else {
+      clase = "column-sm-3";
+    }
+    imageMain=$('<figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[i].img + '" alt="news">' +
+      '<figcation class="figcap">'+state.containData[i].title+'</figcation></figure>');
   }
 
-  const mundo = $('<div></div>');
+  const mundo = $('<div class="bloques column-xs-12"></div>');
   const titMundo = $('<h2 class="text-uppercase">'+state.categories[1].title+'</h2><hr>');
   mundo.append(titMundo);
   let imageMundo = '';
-  for(let j=4; j<=13; j++){
+  for(let j=4; j<=14; j++){
     mundo.append(imageMundo);
-    imageMundo=$('<figure><img class="img-responsive" src="assets/img/news/' + state.containData[j].img + '" alt="">' +
+    let clase = '';
+    if (j==8 || j ==9){
+      clase = "column-sm-6";
+    } else {
+      clase = "column-sm-3";
+    }
+    imageMundo=$('<figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[j].img + '" alt="news">' +
       '<figcation>'+state.containData[j].title+'</figcation></figure>');
   }
 
-  const tecno = $('<div></div>');
+  const tecno = $('<div class="bloques column-xs-12"></div>');
   const titTecno = $('<h2 class="text-uppercase">'+state.categories[2].title+'</h2><hr>');
   tecno.append(titTecno);
   let imageTecno = '';
-  for(let k=13; k<=18; k++){
+  for(let k=14; k<=19; k++){
     tecno.append(imageTecno);
-    imageTecno=$('<figure><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="">' +
+    let clase = '';
+    if (k==14 || k==17 || k==18){
+      clase = "column-sm-6";
+    } else {
+      clase = "column-sm-3"
+    }
+    imageTecno=$('<figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="news">' +
       '<figcation>'+state.containData[k].title+'</figcation></figure>');
   }
 
-  const edu = $('<div></div>');
+  const edu = $('<div class="bloques column-xs-12"></div>');
   const titEdu = $('<h2 class="text-uppercase">'+state.categories[3].title+'</h2><hr>');
   edu.append(titEdu);
   let imageEdu = '';
-  for(let k=18; k<=24; k++){
+  for(let k=19; k<=24; k++){
     edu.append(imageEdu);
-    imageEdu=$('<figure><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="">' +
+    let clase = '';
+    if (k==24){
+      clase = "column-sm-6"
+    } else {
+      clase = "column-sm-3"
+    }
+    imageEdu=$('<figure class="'+clase+'"><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="news">' +
       '<figcation>'+state.containData[k].title+'</figcation></figure>');
   }
 
-  const opi = $('<div></div>');
+  const opi = $('<div class="bloques column-xs-12"></div>');
   const titOpi = $('<h2 class="text-uppercase">'+state.categories[4].title+'</h2><hr>');
   opi.append(titOpi);
   let imageOpi = '';
-  for(let k=24; k<=27; k++){
+  for(let k=24; k<=28; k++){
     opi.append(imageOpi);
-    imageOpi=$('<figure><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="">' +
+    imageOpi=$('<figure class="column-sm-3"><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="news">' +
       '<figcation>'+state.containData[k].title+'</figcation></figure>');
   }
 
-  const carrousel = $('<div></div>');
+  const carrousel = $('<div class="bloques column-xs-12"></div>');
   let slide = '';
-  for(let k=27; k<=32; k++){
+  for(let k=28; k<=32; k++){
     carrousel.append(slide);
-    slide=$('<figure><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="">' +
+    slide=$('<figure class="column-sm-3"><img class="img-responsive" src="assets/img/news/' + state.containData[k].img + '" alt="">' +
       '<figcation>'+state.containData[k].title+'</figcation></figure>');
   }
 

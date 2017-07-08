@@ -1,6 +1,14 @@
 @import "colors";
+@import "grid";
+
 *{
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 .top {
@@ -15,9 +23,9 @@
    margin: 21px;
   }
   &__flex {
-    display: flex;
+    display: flex !important;
     &--around {
-      justify-content: space-around;
+      justify-content: space-between;
     }
     &--center-column {
       align-items: center;
@@ -32,10 +40,29 @@ li {
   font-size: 20px;
 }
 
+.bloques {
+  width: 100%;
+}
+
 .imagen__decolorada {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
   -o-filter: grayscale(100%);
+}
+
+.main-principal {
+  position: relative;
+  .figcap-principal {
+    position: absolute;
+    bottom: 0;
+    color: $white;
+  }
+}
+
+.figcap {
+  height: 200px;
+  background-color: $gray-light;
+  color: $white;
 }
